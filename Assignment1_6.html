@@ -1,0 +1,38 @@
+<!
+An employer wants you to create a program that will allow her to enter each employee’s name, hourly 
+rate of pay, number of hours worked in one week, overtime pay rate, payroll deductions (such as 
+medical insurance, savings, etc.), and tax rate. The program should output the employees gross pay 
+(before taxes and deductions), and net pay (after taxes and deductions) for each employee for one 
+week.
+-->
+<html>
+<head>
+	<meta charset = "utf-8">
+	<title>Assignment1_6</title>
+		<script type="text/javascript">
+		var EmployeeName="Joe", PayRate=0, HrsWorked=0, OvertimePay=0, Deduction=0, TaxRate=0, WeeklyPay=0;
+        EmployeeName = prompt("Please enter Employee Name;", "");
+	    PayRate = prompt("Please enter Employee pay rate;", "");
+		HrsWorked = prompt("Please enter hours worked this week;", "");
+		OvertimePay = prompt("Please enter overtime pay rate;", "");
+		Deduction = prompt("Please enter payroll deductions;", "");
+		TaxRate = prompt("Please enter tax rate;", "");
+//Calculate the gross pay (based on 40hr week
+        if (HrsWorked<=40)
+		{
+        WeeklyPay = PayRate*HrsWorked;
+		}
+        if (HrsWorked>40)
+		{
+        WeeklyPay = PayRate*40+(HrsWorked-40)*OvertimePay;
+		}
+        document.writeln("<h3>Employee&nbsp" + EmployeeName + ",&nbsp gross pay for this week is&nbsp $" + WeeklyPay + "</h3>");		
+//Calculate the net pay
+        WeeklyPay = WeeklyPay*(1-TaxRate)-Deduction;		
+        document.writeln("<h3>Employee&nbsp" + EmployeeName + ",&nbsp net pay for this week is&nbsp $" + WeeklyPay + "</h3>");				
+		</script>
+	</head>
+<body>
+
+</body>
+</html>
