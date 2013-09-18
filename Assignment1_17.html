@@ -1,0 +1,52 @@
+<!
+Write a javascript statment to accomplish each of the following tasks:
+a. Assign the sum of x and y to z, and increment the value of x by 1 after the calculation. Use only 
+one statment.
+b. Test whether the value of the variable count is greater than 10. If it is, then print Count is 
+greater than ten.
+c. Decrement the variable x by 1, then subtract it from the variable total. Use only one statement.
+d. Calculate the remainder after q is divided by divisor, and assign the result to q. Write this 
+statment in two different ways.
+e. Declare variables sum and x.
+f. Assign 1 to variable x.
+g. Assign 0 to variable sum.
+h. Add variable x to variable sum, and assign the result to variable sum. Print The sum is: , 
+followed by the value of variable sum.
+-->
+<html>
+<head>
+	<meta charset = "utf-8">
+	<title>Assignment1_17</title>
+		<script type="text/javascript">
+		  var varX=6
+		  var varY=5
+//Assign the sum of x and y to z, and increment the value of x by 1 after the calculation		  
+		  varZ=varY+varX++;
+//Test whether the value of the variable count is greater than 10. If it is, then print Count is 
+//greater than ten		  
+		  if (varZ>10)
+		  {
+          document.writeln("<h1>Count is greater than ten</h1>");
+		  }
+		  
+//Decrement the variable x by 1, then subtract it from the variable total		  
+		  varZ=varZ-(++varX)
+		  document.writeln("<h1>Total is&nbsp" + varZ + "</h1>");
+		  
+//Calculate the remainder after q is divided by divisor, and assign the result to q
+          var q=10;
+          q=q%3;
+          varZ=q%3;
+          q=varZ;
+          document.writeln("<h1>q is&nbsp" + q + "</h1>");
+		  
+//Declare variables sum and x,Assign 1 to variable x, Assign 0 to variable sum.		  
+         var sum=0, x=1;
+         sum=sum+x;
+         document.writeln("<h1>sum is&nbsp" + sum + "</h1>");		 
+		</script>
+	</head>
+<body>
+
+</body>
+</html>
