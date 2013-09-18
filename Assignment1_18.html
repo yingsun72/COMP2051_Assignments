@@ -1,0 +1,35 @@
+<!Write a program that calculates an average of miles per gallon for a vehicle over the history of 
+miles/gallons factor. The steps are the following:
+a. Input number of full tanks to average.
+b. Input the gallons of fuel filled for number x
+c. Input the miles driven for number x
+d. Repeat entry of gallons and miles until the number of tanks is entered.
+e. Print the average miles per gallon for each tankful and print an average at the bottom.
+-->
+<html>
+<head>
+	<meta charset = "utf-8">
+	<title>Assignment1_18</title>
+		<script>
+		  var TankNum = 1;
+		  var FuelGal = 1;
+		  var MilesDrv = 1;
+		  var AvgMPG = 1.0;
+		  var TotalMPG = 0.0;
+		  TankNum = window.prompt("Please enter the number of tanks to be averaged:", "1");
+		  for (var i=1; i<=TankNum;i++)
+          {
+		  FuelGal = window.prompt("Please enter the Gals of fuel for tank " + i + ";", "1");
+		  MilesDrv = window.prompt("Please enter the Miles Driven for tank " + i + ";", "1");
+		  AvgMPG = MilesDrv / FuelGal;
+		  document.writeln("<h3>Tank&nbsp" + i + "&nbsp miles per gallon is&nbsp" + AvgMPG + "</h3>");
+          TotalMPG = TotalMPG + AvgMPG;		  
+          } 		  
+		  AvgMPG = TotalMPG / TankNum;
+          document.writeln("<h1>Average fuel consumption is&nbsp" + AvgMPG + "&nbspMPG</h1>");		  
+		</script>
+	</head>
+<body>
+
+</body>
+</html>
