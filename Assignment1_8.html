@@ -1,0 +1,35 @@
+<!
+Create two web pages. The first page should ask the user if he or she wants to see some pictures. When 
+the user responds positively, a new window should open displaying several images.
+-->
+<html>
+<head>
+	<meta charset = "utf-8">
+	<title>Assignment1_8</title>
+		<script>
+		function MyMethod(url1, url2, width, height)
+{
+    var newWindow = window.open("", "pictureViewer", 
+        "location=no, directories=no, fullscreen=no, " + 
+        "menubar=no, status=no, toolbar=no, width=" + 
+        width + ", height=" + height + ", scrollbars=no");
+    newWindow.document.writeln("<html>");
+    newWindow.document.writeln("<body style='margin: 0 0 0 0;'>");
+    newWindow.document.writeln("<a href='javascript:window.close();'>");
+    newWindow.document.writeln("<img src='" + url1 + 
+       "' alt='Click to close' id='Image1'/>");
+    newWindow.document.writeln("<img src='" + url2 + 
+       "' alt='Click to close' id='Image2'/>");	   
+    newWindow.document.writeln("</a>");
+    newWindow.document.writeln("</body></html>");
+    newWindow.document.close();
+}
+		</script>
+	</head>
+<body>
+<p><b>Would you like to see some pictures?</b></p>
+<button type="button" onclick="MyMethod('http://unrestrictedstock.com/wp-content/uploads/headphones-free-stock-vector-small.jpg',
+'http://unrestrictedstock.com/wp-content/uploads/Unrestricted-Sale-Set-cover.jpg',
+400,400)">Yes!</button>
+</body>
+</html>
