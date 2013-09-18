@@ -1,0 +1,54 @@
+<!Create a program that calculates the gross pay of an employee, taking into account overtime 
+compensation. To do this:
+a. Take in employee name.
+b. Take in employee rate pay.
+c. Take in employee hours worked that week.
+d. If hours over 40, then the hours minus 40 should have a rate of time and a half added to the 
+total 40 * rate.
+e. Print results.
+f. Repeat until all employees are added.
+-->
+<html>
+<head>
+	<meta charset = "utf-8">
+	<title>Assignment1_21</title>
+		<script>
+		var EmployeeName="Joe", PayRate=0, HrsWorked=0, WeeklyPay=0;
+        EmployeeName = prompt("Please enter Employee Name;", "");
+	    PayRate = prompt("Please enter Employee pay rate;", "");
+		HrsWorked = prompt("Please enter hours worked this week;", "");
+		if (HrsWorked<=40)
+		{
+        WeeklyPay = HrsWorked * PayRate;
+		}
+		if (HrsWorked>40)
+		{
+        WeeklyPay = 40 * PayRate + (HrsWorked-40)*PayRate*1.5;
+		}	
+		document.writeln("<h3>Employee&nbsp" + EmployeeName + ",&nbsp pay for this week is&nbsp $" + WeeklyPay + "</h3>");
+//now loop till user cancels		
+        while (EmployeeName!=null) 
+		{
+        EmployeeName = prompt("Please enter Employee Name;", "");
+	    PayRate = prompt("Please enter Employee pay rate;", "");
+		HrsWorked = prompt("Please enter hours worked this week;", "");
+		if (HrsWorked<=40)
+		{
+        WeeklyPay = HrsWorked * PayRate;
+		}
+		if (HrsWorked>40)
+		{
+        WeeklyPay = 40 * PayRate + (HrsWorked-40)*PayRate*1.5;
+		}
+//Only print if employee name is entered		
+		if (EmployeeName!=null)
+		{
+		document.writeln("<h3>Employee&nbsp" + EmployeeName + ",&nbsp pay for this week is&nbsp $" + WeeklyPay + "</h3>");		
+		}
+        }  				  
+		</script>
+	</head>
+<body>
+
+</body>
+</html>
