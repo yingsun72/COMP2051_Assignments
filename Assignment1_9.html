@@ -1,0 +1,32 @@
+<!
+Create a web page that contains two buttons. When the first is clicked, the user will be prompted to 
+enter a first name, then a last name. These names will be concatenated to form a username with a dot 
+between the first and last names. The second button will prompt the user for a nickname.
+-->
+<html>
+<head>
+	<meta charset = "utf-8">
+	<title>Assignment1_9</title>
+		<script>
+		function MyMethod1()
+		{
+		  var FirstName, LastName;
+		  FirstName = window.prompt("Please enter your first name:","");
+		  LastName = window.prompt("Please enter your Last name:","");
+		  var UserName=FirstName.concat('.').concat(LastName);
+		  
+		  document.writeln("<h1>Your user name is " + UserName + "</h1>")
+		}
+		function MyMethod2()
+		{
+		  var NickName;
+		  NickName = window.prompt("Please enter your nickname:","");
+		  document.writeln("<h1>Your nickname is " + NickName + "</h1>")
+		}		
+		</script>
+	</head>
+<body>
+<button type="button" onclick="MyMethod1()">Enter name</button>
+<button type="button" onclick="MyMethod2()">Enter nickname</button>
+</body>
+</html>
