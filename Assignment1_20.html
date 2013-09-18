@@ -1,0 +1,44 @@
+<!Write a program that computes the commission and total payment of sales of an employee. This 
+program will:
+a. Ask for sale item amount.
+b. Repeat until data is done being entered.
+c. Calculate the percentage of commission based on total sales.
+d. Add base pay.
+e. Print items and total amount.
+-->
+<html>
+<head>
+	<meta charset = "utf-8">
+	<title>Assignment1_20</title>
+		<script>
+		  var ItemAmt=0, TotalSales=0, TotalCom=0, TotalPay=0;
+                  ItemAmt = prompt("Please enter your sales item amount;", "");
+                  TotalSales = parseFloat(ItemAmt);
+		  while (ItemAmt!=null) 
+		  {
+		  ItemAmt = prompt("Please enter your sales item amount;", "");
+                  if (ItemAmt!=null)
+                  { 
+                  TotalSales = parseFloat(TotalSales)+parseFloat(ItemAmt);
+                  }
+                  } 
+             document.writeln("<h3>Your total sales amount is&nbsp" + TotalSales + "</h3>");        
+//Calculating sales commission, %5 for =<$1000, 10% for >$1000 
+//example, sales of $4000 will get a commission of $1000*5% + $3000*10% = $350
+                  if (TotalSales<=1000)
+                  {
+                  TotalCom = TotalSales*0.05;  
+                  }  
+                  if (TotalSales>1000)
+                  {
+                  TotalCom = (TotalSales-1000)*0.10+50;  
+                  } 
+//Assuming base salary is $25000				  
+				  TotalPay = 25000 + TotalCom;
+				  document.writeln("<h3>Your total compensation is&nbsp" + TotalPay + "</h3>"); 
+		</script>
+	</head>
+<body>
+
+</body>
+</html>
