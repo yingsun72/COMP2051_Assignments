@@ -1,0 +1,29 @@
+<!Develop a class-averaging program that will process an arbitrary number of grades each time the program is run.
+-->
+<html>
+<head>
+	<meta charset = "utf-8">
+	<title>Assignment2_2</title>
+		<script>
+		var Count=1,Grade=0,GradeAvg=0,TotalGrade=0;		
+//prompt for first student grade
+        Grade = prompt("Please enter grade for student (range 0-100)","");
+		TotalGrade = TotalGrade+parseInt(Grade);
+//keep prompting for student grade till user hit CANCEL		
+		while (Grade!=null)  
+		{
+        Grade = prompt("Please enter grade for student (range 0-100)","");
+		if (Grade!=null) 
+		{
+		TotalGrade = TotalGrade+parseInt(Grade);
+		Count++
+		}
+		};	  
+		GradeAvg = TotalGrade/Count;
+		document.writeln("<h3>The class average grade is &nbsp" + GradeAvg + "</h3>"); 
+		</script>
+</head>
+<body>
+
+</body>
+</html>
