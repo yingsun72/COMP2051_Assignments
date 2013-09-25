@@ -1,0 +1,61 @@
+<!(Nested Control Statement) A college offers a course that prepares students for the state licensing exam 
+for real estate brokers. Last year, several of the students who completed this course took the licensing
+exam. Naturally, the college wants to know how well its students performed. You have been asked to 
+write a program to summarize the results. You have been given a list of these 10 students. Next to each 
+name is written a 1 if the student passed the exam and a 2 if the student failed. Your program should 
+analyze the results of the exam as follows:
+a. Input each test result (i.e., a 1 or a 2). Display the message “Enter result” on the screen each 
+time the program requests another test result.
+b. Count the number of test results of each type.
+c. Display a summary of the test results indicating the number of students who passed and the 
+number of students who failed.
+d. If more than eight students passed the exam, print the message Raise tuition.
+-->
+<html>
+<head>
+	<meta charset = "utf-8">
+	<title>Assignment2_3</title>
+		<script>
+		var Count1=0,Count2=0;		
+//prompt for first student grade
+        var Result = prompt("Enter result","");
+		var Rlt=Result.split(' ', 2);
+		var Grade=Rlt[1];
+		if (Grade==1)
+		{
+		Count1++;
+		}
+		if (Grade==2)
+		{
+		Count2++;
+		}		
+//keep prompting for student grade till user hit CANCEL		
+		while (Result!=null)  
+		{
+        Result = prompt("Enter result","");
+		if (Result!=null)
+		{
+		Rlt=Result.split(' ', 2);
+		Grade=Rlt[1];
+		if (Grade==1)
+		{
+		Count1++;
+		}
+		if (Grade==2)
+		{
+		Count2++;
+		}	
+        }		
+		};	  
+		document.writeln("<h3>The number of students passed &nbsp" + Count1 + "</h3>"); 
+		document.writeln("<h3>The number of students failed &nbsp" + Count2 + "</h3>"); 
+		if (Count1>8)
+		{
+		document.writeln("<h3>Raise tuition!</h3>");
+		}
+		</script>
+</head>
+<body>
+
+</body>
+</html>
