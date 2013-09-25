@@ -1,0 +1,36 @@
+<!A company wants to transmit data over the telephone, but it is concerned that its phones 
+may be tapped. All of its data is transmitted as four-digit integers. It has asked you to 
+write a program that will encrypt its data so that the data may be transmitted more securely. 
+Your script should read a four-digit integer entered by the user in a prompt dialog and encrypt
+it as follows: Replace each digit by (the sum of that digit plus 7) modulus 10. Then swap the 
+first digit with the third, and swap the second digit with the fourth. Then output text that 
+displays the encrypted integer. Once this is done, write a program that inputs an encrypted 
+four-digit integer and decrypts it to form the original number.
+-->
+<html>
+<head>
+<body>
+<canvas id="myCanvas" width="600" height="800" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+	<meta charset = "utf-8">
+	<title>Assignment2_12</title>
+		<script>
+		var Product=1, i=15;
+		var c=document.getElementById('myCanvas');
+		var ctx=c.getContext('2d');
+		ctx.font='15pt Arial';			
+        while (Product!=null)
+		{
+		if (Product%2==0)
+		{
+	    ctx.fillText('Number is:', 5, i);
+        ctx.fillText(Product, 200, i);
+        i=i+20;		
+		}
+		Product++;
+		}
+
+		</script>
+</body>
+		</head>
+</html>
