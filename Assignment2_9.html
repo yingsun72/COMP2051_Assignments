@@ -1,0 +1,68 @@
+<!Develop a script that will determine the gross pay for each of three employees. The company pays 
+“straight time” for the first 40 hours worked by each employee and pays “time and a half” for all hours 
+worked in excess of 40 hours. You’re given a list of the employees of the company, the number of hours 
+each employee worked last week, and the hourly rate of each employee. Your script should input this 
+information for each employee, determine the employee’s gross pay and output HTML5 text that 
+displays the employee’s gross pay. Use prompt dialogs to input the data. Some sample data:
+-->
+<html>
+<head>
+<body>
+<canvas id="myCanvas" width="600" height="800" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+	<meta charset = "utf-8">
+	<title>Assignment2_9</title>
+		<script>
+		var Hours=0, i=15, HrRate=0, GrossPay;	
+		var c=document.getElementById('myCanvas');
+		var ctx=c.getContext('2d');
+		ctx.font='15pt Arial';			
+//prompt for first employee info
+        var Result = prompt("Enter hours worked and hourly rate (separated by space)","");
+		var Rlt=Result.split(' ', 2);
+		Hours=Rlt[0];
+		HrRate=Rlt[1];
+		if (Hours>40)
+		{
+		GrossPay=HrRate*40+(Hours-40)*HrRate*1.5
+		}
+		if (Hours<=40)
+		{
+		GrossPay=HrRate*Hours
+		}		
+		ctx.fillText('Hours worked:', 5, i);
+        ctx.fillText(Hours, 200, i);
+		ctx.fillText('Hourly rate:', 5, i+20);
+		ctx.fillText(HrRate, 200, i+20);
+		ctx.fillText('Employee gross pay:', 5, i+40);
+		ctx.fillText(GrossPay, 200, i+40);		
+		i=i+60;
+		while (Result!=null)
+		{
+		Result = prompt("For this tank, enter miles driven and gallons used (separated by space)","");
+		if (Result!=null)
+		{
+        Rlt=Result.split(' ', 2);	
+		Hours=Rlt[0];
+		HrRate=Rlt[1];
+		if (Hours>40)
+		{
+		GrossPay=HrRate*40+(Hours-40)*HrRate*1.5
+		}
+		if (Hours<=40)
+		{
+		GrossPay=HrRate*Hours
+		}				
+		ctx.fillText('Hours worked:', 5, i);
+        ctx.fillText(Hours, 200, i);
+		ctx.fillText('Hourly rate:', 5, i+20);
+		ctx.fillText(HrRate, 200, i+20);		
+		ctx.fillText('Employee gross pay:', 5, i+40);
+		ctx.fillText(GrossPay, 200, i+40);		
+		i=i+60;
+		}
+		}
+		</script>
+</body>
+</head>
+</html>
