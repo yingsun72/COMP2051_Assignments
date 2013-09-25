@@ -1,0 +1,27 @@
+<!Write a script that finds the smallest of several non-negative integers. Assume that the first value read 
+specifies the number of values to be input from the user.
+-->
+<html>
+<head>
+	<meta charset = "utf-8">
+	<title>Assignment2_4</title>
+		<script>
+		var Number=0, Smaller=0, Small=9999999;		
+//prompt for first student grade
+        Number = prompt("How many numbers are you entering?","");
+//keep prompting for student grade till user hit CANCEL		
+		for (i=0;i<parseInt(Number);i++)  
+		{
+        Smaller = prompt("Please enter a new number","");
+		if (Small>Smaller)
+		{
+		Small=Smaller
+		}
+		};	  
+		document.writeln("<h3>The smallest number entered is &nbsp" + Small + "</h3>"); 
+		</script>
+</head>
+<body>
+
+</body>
+</html>
