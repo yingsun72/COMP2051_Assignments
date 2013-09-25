@@ -1,0 +1,25 @@
+<!Write a script that inputs a series of 10 single-digit numbers as characters {eg. 6, 7, 3, 6, 4, 2, 5, 
+-7, 1, 2} determines the largest of the numbers, and outputs a message that displays the largest number. 
+-->
+<html>
+<head>
+	<meta charset = "utf-8">
+	<title>Assignment2_10</title>
+		<script>
+		var Number=0, Biggest=0, Big=0;		
+//keep prompting for 10 times		
+		for (i=0;i<10;i++)  
+		{
+        Big = prompt("Please enter a new number","");
+		if (Biggest<Big)
+		{
+		Biggest=Big
+		}
+		};	  
+		document.writeln("<h3>The biggest number entered is &nbsp" + Biggest + "</h3>"); 
+		</script>
+</head>
+<body>
+
+</body>
+</html>
