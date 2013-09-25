@@ -1,0 +1,68 @@
+<!Write a script that outputs XHTML to display the given patterns separately, one below the other. Use for 
+statements to generate the patterns. All asterisks (*) should be printed by a single statement of the form 
+document.write(*); (this causes the asterisks to print side by side). A statement of the form 
+document.writeln(bln); can be used to position to the next line. A statement of the form document.write( ); 
+can be used to display a space (needed for the last two patterns). There should be no other output statements in the 
+program. [Hint: The last two patterns require that each line begin with an appropriate number of blanks. You 
+may need to use the XHTML pre t a g s
+-->
+<html>
+<head>
+	<meta charset = "utf-8">
+	<title>Assignment2_6</title>
+		<script>
+//First pattern		
+		for (var i=1;i<=10;i++)
+		{
+		for (var int=1;int<=i;int++)
+		{
+        document.write("*"); 
+		}
+		document.writeln("<br />");
+		}
+		document.writeln(" ");
+//Second pattern		
+		for (var i=10;i>=1;i--)
+		{
+		for (var int=1;int<=i;int++)
+		{
+        document.write("*"); 
+		}
+		document.writeln("<br />");
+		}
+        document.writeln(" ");		
+//Third pattern		
+        for (var i=1;i<=10;i++)
+		{
+		document.write("<pre>");
+		for (var cnt=1;cnt<=i;cnt++)
+		{
+		document.write(" ");
+		}		
+		for (var int=10;int>=i;int--)
+		{
+        document.write("*"); 
+		}
+		document.write("</pre>");
+		}
+		document.writeln(" ");	
+//Fourth pattern		
+        for (var i=1;i<=10;i++)
+		{
+		document.write("<pre>");
+		for (var int=10;int>=i;int--)
+		{
+		document.write(" ");
+		}		
+		for (var cnt=1;cnt<=i;cnt++)
+		{
+		document.write("*"); 
+		}		
+		document.write("</pre>");
+		}
+		</script>
+</head>
+<body>
+
+</body>
+</html>
