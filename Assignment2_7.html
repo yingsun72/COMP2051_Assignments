@@ -1,0 +1,67 @@
+<!Drivers are concerned with the mileage obtained by their automobiles. One driver has kept track of 
+several tankfuls of gasolie by recording the number of miles driven and the number of gallons used for 
+each thankful. Develop a script that will take as input the miles driven and gallons used (both as 
+integers), for each thankful. The script should calculate and output HTML5 text that displays the number 
+of miles per gallon obtained for each thankful and prints the combined number of miles per gallon 
+obtained for all tankfuls up to this point. Use prompt dialogs to obtain the data from the users. Use your 
+own made-up data to solve the problem.
+-->
+<html>
+<head>
+<body>
+<canvas id="myCanvas" width="600" height="800" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+	<meta charset = "utf-8">
+	<title>Assignment2_7</title>
+		<script>
+		var Miles=0,Gallons=0,MPG=0,Count=0,TotalMPG=0, i=15;
+		var c=document.getElementById('myCanvas');
+		var ctx=c.getContext('2d');
+		ctx.font='15pt Arial';		
+		var Result = prompt("For this tank, enter miles driven and gallons used (separated by space)","");
+		var Rlt=Result.split(' ', 2);
+		Miles=Rlt[0];
+		Gallons=Rlt[1];
+		MPG=Miles/Gallons;
+		TotalMPG=TotalMPG+MPG;
+		Count++;
+		ctx.fillText('Miles driven:', 5, i);
+        ctx.fillText(Miles, 170, i);		
+		ctx.fillText('Gallons consumed:', 5, i+20);
+		ctx.fillText(Gallons, 170, i+20);
+		ctx.fillText('MPG this tank:', 5, i+40);
+		ctx.fillText(MPG, 170, i+40);
+		i=i+60;
+		while (Result!=null)
+		{
+		Result = prompt("For this tank, enter miles driven and gallons used (separated by space)","");
+		if (Result!=null)
+		{
+		Rlt=Result.split(' ', 2);
+		Miles=Rlt[0];
+		Gallons=Rlt[1];
+		MPG=Miles/Gallons;
+		TotalMPG=TotalMPG+MPG;
+		Count++
+		ctx.fillText('Miles driven:', 5, i);
+        ctx.fillText(Miles, 170, i);		
+		ctx.fillText('Gallons consumed:', 5, i+20);
+		ctx.fillText(Gallons, 170, i+20);
+		ctx.fillText('MPG this tank:', 5, i+40);
+		ctx.fillText(MPG, 170, i+40);	
+        i=i+60;		
+		}
+		}
+//Total MPG
+        i=i+10;
+        ctx.fillText('Total MPG:', 5, i);
+        ctx.fillText(TotalMPG, 170, i);	
+		i=i+20;	
+//Average MPG		
+        TotalMPG=TotalMPG/Count;		
+		ctx.fillText('Average MPG:', 5, i);
+        ctx.fillText(TotalMPG, 170, i);			
+		</script>
+</body>
+		</head>
+</html>
