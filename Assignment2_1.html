@@ -1,0 +1,23 @@
+<!A class of ten students took a quiz. The grades (integers in the range 0 to 100) for this quiz are available to you. 
+Determine the class average on the quiz.
+-->
+<html>
+<head>
+	<meta charset = "utf-8">
+	<title>Assignment2_1</title>
+		<script>
+		var Grade=0,GradeAvg=0,TotalGrade=0;
+//loop 10 times to gather student grades		
+		for (var i=1;i<=10;i++) 
+		{
+        Grade = prompt("Please enter grade for student (range 0-100)","");
+		TotalGrade = parseInt(TotalGrade) + parseInt(Grade);
+		};	  
+		GradeAvg = parseInt(TotalGrade)/10;
+		document.writeln("<h3>The class average grade is &nbsp" + GradeAvg + "</h3>"); 
+		</script>
+</head>
+<body>
+
+</body>
+</html>
