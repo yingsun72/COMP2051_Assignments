@@ -1,0 +1,39 @@
+<!A company wants to transmit data over the telephone, but it is concerned that its phones 
+may be tapped. All of its data is transmitted as four-digit integers. It has asked you to 
+write a program that will encrypt its data so that the data may be transmitted more securely. 
+Your script should read a four-digit integer entered by the user in a prompt dialog and encrypt
+it as follows: Replace each digit by (the sum of that digit plus 7) modulus 10. Then swap the 
+first digit with the third, and swap the second digit with the fourth. Then output text that 
+displays the encrypted integer. Once this is done, write a program that inputs an encrypted 
+four-digit integer and decrypts it to form the original number.
+-->
+<html>
+<head>
+<body>
+	<meta charset = "utf-8">
+	<title>Assignment2_12a</title>
+		<script>
+//This will decypt a given 4 digit number			
+		var Output=1000, i=15, d1=1, d2=1, d3=1, d4=1;	
+        var Result=prompt("Please enter a 4 digital number to be decrypted:","");
+		var Rlt=Result.split('', 4);
+		D1=Rlt[2];
+		D2=Rlt[3];
+		D3=Rlt[0];
+		D4=Rlt[1];
+		D1=(parseInt(D1)+10)-7;
+		D2=(parseInt(D2)+10)-7;
+		D3=(parseInt(D3)+10)-7;
+		D4=(parseInt(D4)+10)-7;
+		D1=D1.toString();
+		D2=D2.toString();
+		D3=D3.toString();
+		D4=D4.toString();
+		Result=D1.concat(D2);
+		Result=Result.concat(D3);
+		Result=Result.concat(D4);
+		document.writeln("<h3>The decrypted number is &nbsp" + Result + "</h3>");
+		</script>
+</body>
+		</head>
+</html>
