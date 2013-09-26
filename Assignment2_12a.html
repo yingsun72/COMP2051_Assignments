@@ -10,26 +10,28 @@ four-digit integer and decrypts it to form the original number.
 <html>
 <head>
 <body>
-<canvas id="myCanvas" width="600" height="800" style="border:1px solid #d3d3d3;">
-Your browser does not support the HTML5 canvas tag.</canvas>
 	<meta charset = "utf-8">
-	<title>Assignment2_12</title>
+	<title>Assignment2_12a</title>
 		<script>
-		var Product=1, i=15;
-		var c=document.getElementById('myCanvas');
-		var ctx=c.getContext('2d');
-		ctx.font='15pt Arial';			
-        while (Product!=null)
-		{
-		if (Product%2==0)
-		{
-	    ctx.fillText('Number is:', 5, i);
-        ctx.fillText(Product, 200, i);
-        i=i+20;		
-		}
-		Product++;
-		}
-
+		var Output=1000, i=15, d1=1, d2=1, d3=1, d4=1;	
+        var Result=prompt("Please enter a 4 digital number to be encrypted:","");
+		var Rlt=Result.split('', 4);
+		D1=Rlt[0];
+		D2=Rlt[1];
+		D3=Rlt[2];
+		D4=Rlt[3];
+		D1=(parseInt(D1)+7)%10;
+		D2=(parseInt(D2)+7)%10;
+		D3=(parseInt(D3)+7)%10;
+		D4=(parseInt(D4)+7)%10;
+		D1=D1.toString();
+		D2=D2.toString();
+		D3=D3.toString();
+		D4=D4.toString();
+		Result=D3.concat(D4);
+		Result=Result.concat(D1);
+		Result=Result.concat(D2);
+		document.writeln("<h3>The encrypted number is &nbsp" + Result + "</h3>");
 		</script>
 </body>
 		</head>
