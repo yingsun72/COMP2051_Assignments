@@ -1,0 +1,61 @@
+<!Write a script that plays a “guess the number” game as follows: Your program chooses the number to be 
+guessed by selecting a random integer in the range 1 to 1000. The script displays the prompt Guess a 
+number between 1 and 1000 next to a text field. The player types a first guess into the text field and 
+clicks a button to submit the guess to the script. If the player's guess is incorrect, your program should 
+display Too high. Try again. or Too low. Try again. to help the player “zero in” on the correct answer and 
+should clear the text field so the user can enter the next guess. When the user enters the correct 
+answer, display Congratulations. You guessed the number! and clear the text field so the user can play 
+again. [Note: The guessing technique employed in this problem is similar to a binary search, which we 
+discuss in Chapter 10, JavaScript: Arrays.]>
+<html>
+<head>
+<body>
+<FORM NAME="Conversion">
+<H2>Guess the number.<br></H2>
+<INPUT TYPE="Button" Value="Set a number to guess" onClick="generateNum()"><BR>	
+<canvas id="myCanvas" width="400" height="20" style="border:1px solid #d3d3d3;">	
+</FORM>
+Your browser does not support the HTML5 canvas tag.</canvas>	
+<P>Enter your answer here. 
+<INPUT TYPE="TEXT" NAME="Answer" ID="Answer">
+<INPUT TYPE="Button" Value="Did I guess right?" onClick="checkAnswer()"><BR>
+</P>
+<canvas id="myCanvas1" width="400" height="20" style="border:1px solid #d3d3d3;">	
+</FORM>
+Your browser does not support the HTML5 canvas tag.</canvas>
+	<meta charset = "utf-8">
+	<title>Assignment3_17</title>
+		<script> 
+		var number;
+        function generateNum(){
+		var output;		
+		var c=document.getElementById('myCanvas');
+		var ctx=c.getContext('2d');
+		ctx.font='15pt Arial';			
+		number=Math.floor(Math.random()*1000);
+		output=number.toString();
+		ctx.clearRect(0,0,c.width,c.height);
+		ctx.fillText('Random number is', 5, 16);	
+        	ctx.fillText(output, 180, 16);	
+		}
+		function checkAnswer(){
+		var output;		
+		var c=document.getElementById('myCanvas1');
+		var ctx=c.getContext('2d');
+		ctx.font='15pt Arial';		
+		var uInput=parseInt(document.getElementById('Answer').value);
+		if (uInput>number){
+		  output="Go LOWER!";}
+		if (uInput<number){
+		  output="GO HIGHER!";}
+		if (uInput==number){
+		  output="BINGO! You got it!";}
+		ctx.clearRect(0,0,c.width,c.height);
+        	ctx.fillText(output, 5, 16);			
+		}
+		</script>
+
+
+</body>
+</head>
+</html>
