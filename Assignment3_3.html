@@ -1,0 +1,35 @@
+<!Write function distance that calculates the distance between two points (x1, y1) and (x2,y2). All 
+numbers and return values should be floating-point values. Incorporate this function into a script that 
+enables the user to enter the coordinates of the points through an XHTML form.>
+<html>
+<head>
+<body>
+<FORM NAME="test">
+<H2>Enter two points to calculate the distance(separated by space). <br></H2>
+<P>Enter two points to calculate the distance(separated by space). <INPUT TYPE="TEXT" NAME="Points" ID="Points"><BR><BR>
+<INPUT TYPE="Button" Value="Calculate" onClick="calculate_distance()">
+</P>
+</FORM>		
+<canvas id="myCanvas" width="600" height="800" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+	<meta charset = "utf-8">
+	<title>Assignment3_3</title>
+		<script> 
+		var c=document.getElementById('myCanvas');
+		var ctx=c.getContext('2d');
+		ctx.font='15pt Arial';		
+		function calculate_distance()
+		{
+		var Result=document.getElementById("Points").value;
+		var Rlt=Result.split(' ', 2);		
+		var PointX=Rlt[0];
+		var PointY=Rlt[1];
+		var Distance=parseFloat(PointY)-parseFloat(PointX);
+//		return Charge;
+		ctx.fillText('Distance is:', 5, 15);
+        ctx.fillText(Distance, 170, 15);				
+		}
+		</script>
+</body>
+		</head>
+</html>
