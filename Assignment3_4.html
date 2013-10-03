@@ -1,0 +1,38 @@
+<!Write a function integerPower( base, exponent ) that returns the value of base exponent For example, 
+integerPower( 3, 4 ) = 3 * 3 * 3 * 3. Assume that exponent and base are integers. Function integerPower 
+should use a for or while statement to control the calculation. Incorporate this function into a script that 
+reads integer values from an XHTML form for base and exponent and performs the calculation with the 
+integerPower function. The XHTML form should consist of two text fields and a button to initiate the 
+calculation. The user should interact with the program by typing numbers in both text fields then clicking 
+the button.>
+<html>
+<head>
+<body>
+<FORM NAME="test">
+<H2>Enter base and exponent integers to calculate integer power (seperated by space). <br></H2>
+<P>Enter base integers. <INPUT TYPE="TEXT" NAME="IntegerB" ID="IntegerB"><BR>
+Enter exponent integers. <INPUT TYPE="TEXT" NAME="IntegerE" ID="IntegerE"><BR>
+<INPUT TYPE="Button" Value="Calculate" onClick="integerPower()">
+</P>
+</FORM>		
+<canvas id="myCanvas" width="600" height="800" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+	<meta charset = "utf-8">
+	<title>Assignment3_4</title>
+		<script> 
+		var c=document.getElementById('myCanvas');
+		var ctx=c.getContext('2d');
+		ctx.font='15pt Arial';		
+		function integerPower()
+		{	
+		var Base=document.getElementById("IntegerB").value;
+		var Exponent=document.getElementById("IntegerE").value;
+		var Power=Math.pow(parseInt(Base),parseInt(Exponent));
+		ctx.clearRect(0,0,c.width,c.height);
+		ctx.fillText('Resutl is:', 5, 15);
+        ctx.fillText(Power, 170, 15);				
+		}
+		</script>
+</body>
+		</head>
+</html>
