@@ -1,0 +1,49 @@
+<!An integer number is said to be a perfect number if its factors, including 1 (but not the number itself), 
+sum to the number. For example, 6 is a perfect number, because 6 = 1 + 2 + 3.Write a function perfect 
+that determines whether parameter number is a perfect number. Use this function in a script that 
+determines and displays all the perfect numbers between 1 and 1000. Print the factors of each perfect 
+number to confirm that the number is indeed perfect. Challenge the computing power of your computer 
+by testing numbers much larger than 1000. Display the results in a textarea. An integer is said to be 
+prime if it is greater than 1 and divisible only by 1 and itself. For example, 2, 3, 5 and 7 are prime, but 4, 
+6, 8 and 9 are not. 
+a. Write a function that determines whether a number is prime.
+b. Use this function in a script that determines and prints all the prime numbers between 1 and 
+10,000. How many of these 10,000 numbers do you really have to test before being sure that 
+you have found all the primes? Display the results in a textarea. 
+c. Initially, you might think that n/2 is the upper limit for which you must test to see whether a 
+number is prime, but you only need go as high as the square root of n. Why? Rewrite the 
+program using the Math.sqrt method to calculate the square root, and run it both ways. 
+Estimate the performance improvement.>
+<html>
+<head>
+<body>
+<FORM NAME="Small">
+<H2>Enter 3 numbers to find the smallest<br></H2>
+<P>First number. <INPUT TYPE="TEXT" NAME="Num1" ID="Num1">
+Second number. <INPUT TYPE="TEXT" NAME="Num2" ID="Num2">
+Third number. <INPUT TYPE="TEXT" NAME="Num3" ID="Num3"><BR>
+<INPUT TYPE="Button" Value="Find Smallest Number" onClick="Smallest()"><BR><BR>
+</P>
+</FORM>		
+<canvas id="myCanvas" width="600" height="800" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+	<meta charset = "utf-8">
+	<title>Assignment3_11</title>
+		<script> 
+		var c=document.getElementById('myCanvas');
+		var ctx=c.getContext('2d');
+		ctx.font='15pt Arial';	
+		function Smallest()
+		{
+		var x=parseFloat(document.getElementById("Num1").value);
+		var y=parseFloat(document.getElementById("Num2").value);
+		var z=parseFloat(document.getElementById("Num3").value);
+		var result=Math.min(x, Math.min(y,z));
+		ctx.clearRect(0,0,c.width,c.height);
+		ctx.fillText('The smallest number is', 5, 15);	
+        ctx.fillText(result, 230, 15);			
+		}
+		</script>
+</body>
+		</head>
+</html>
