@@ -1,0 +1,44 @@
+<!Write a function multiple that determines, for a pair of integers, whether the second integer is a 
+multiple of the first. The function should take two integer arguments and return true if the second is a 
+multiple of the first, and false otherwise. Incorporate this function into a script that inputs a series of 
+pairs of integers (one pair at a time). The XHTML form should consist of two text fields and a button to 
+initiate the calculation. The user should interact with the program by typing numbers in both text fields, 
+then clicking the button.>
+<html>
+<head>
+<body>
+<FORM NAME="test">
+<H2>Enter two integers to determine whether second is a multiple of the first. <br></H2>
+<P>Enter first integer. <INPUT TYPE="TEXT" NAME="Integer1" ID="Integer1"><BR><BR>
+Enter second integer. <INPUT TYPE="TEXT" NAME="Integer2" ID="Integer2"><BR><BR>
+<INPUT TYPE="Button" Value="Calculate" onClick="Calculate()">
+</P>
+</FORM>		
+<canvas id="myCanvas" width="600" height="800" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+	<meta charset = "utf-8">
+	<title>Assignment3_5</title>
+		<script> 
+		var c=document.getElementById('myCanvas');
+		var ctx=c.getContext('2d');
+		ctx.font='15pt Arial';	       		
+		function Calculate()
+		{
+		var Int1=document.getElementById("Integer1").value;
+		var Int2=document.getElementById("Integer2").value;
+		var Mod=parseInt(Int2)%parseInt(Int1);
+		if (Mod==0)
+                {
+		ctx.clearRect(0,0,c.width,c.height);
+		ctx.fillText('Second integer is a multiple of first integer', 5, 15);	
+                }
+		else
+                {
+                ctx.clearRect(0,0,c.width,c.height);
+		ctx.fillText('Second integer is not a multiple of first integer', 5, 15);
+                }
+		}
+		</script>
+</body>
+		</head>
+</html>
