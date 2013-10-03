@@ -1,0 +1,36 @@
+<!Write a function squareOfAsterisks that displays a solid square of asterisks whose side is specified in 
+integer parameter side. For example, if side is 4, the function displays 2
+****
+****
+****
+****
+Incorporate this function into a script that reads an integer value for side from the user at the keyboard 
+and performs the drawing with the squareOfAsterisks function.>
+<html>
+<head>
+<body>
+	<meta charset = "utf-8">
+	<title>Assignment3_7</title>
+		<script> 
+//prompt for user input
+		var Side = parseInt(prompt("Enter side to draw square of asterisks:",""));
+                document.writeln("<h3>Side value is &nbsp" + Side + "</h3>"); 
+                  if (Side!=null)
+		  {
+  		    squareOfAsterisks(Side)
+		  }	
+                function squareOfAsterisks(input)
+		{
+		  for (var i=1;i<=input;i++)
+                  {
+                    for (var int=1;int<=input;int++)
+		    {
+		      document.write("*");
+		    }
+                    document.writeln("<br />");
+                   }			
+		}
+		</script>
+</body>
+		</head>
+</html>
