@@ -1,0 +1,51 @@
+<!Write a recursive function power( base, exponent ) that, when invoked, returns base exponent for 
+example, power( 3, 4 ) = 3 * 3 * 3 * 3. Assume that exponent is an integer greater than or equal to 1. The 
+recursion step would use the relationship:
+baseexponent = base · base exponent –1
+and the terminating condition occurs when exponent is equal to 1, because base1
+= base Incorporate 
+this function into a script that enables the user to enter the base and exponent.
+a. It is interesting to watch recursion in action. Modify the factorial function above to display its 
+local variable and recursive-call parameter. For each recursive call, display the outputs on a 
+separate line and add a level of indentation. Do your utmost to make the outputs clear, 
+interesting and meaningful. Your goal here is to design and implement an output format that 
+helps a person understand recursion better. You may want to add such display capabilities to 
+the many other recursion examples and exercises throughout the text.>
+<html>
+<head>
+<body>
+<FORM NAME="Calculation">
+<H2>Number power calculation.<br></H2>
+<INPUT TYPE="TEXT" NAME="Enter base integer" ID="Base">
+<INPUT TYPE="TEXT" NAME="Enter exponent integer" ID="Exponent"><BR>
+<INPUT TYPE="Button" Value="Calculate power" onClick="power()"><BR>	
+<canvas id="myCanvas" width="400" height="200" style="border:1px solid #d3d3d3;">	
+</FORM>
+</FORM>
+Your browser does not support the HTML5 canvas tag.</canvas>
+	<meta charset = "utf-8">
+	<title>Assignment3_18</title>
+	<script> 
+        function power(){
+	var c=document.getElementById('myCanvas');
+	var ctx=c.getContext('2d');
+	ctx.font='15pt Arial';	
+//	var i=16;
+	var base=parseInt(document.getElementById('Base').value); 
+	var exponent=parseInt(document.getElementById('Exponent').value);   
+	var output=powerCalc(base,exponent);
+	ctx.clearRect(0,0,c.width,c.height);
+	ctx.fillText('Result is', 5, 16);	
+        ctx.fillText(output, 180, 16);
+    	}
+	function powerCalc(base, exponent) {
+  	if (exponent == 0)                
+    	return 1;
+  	else
+    	return base * powerCalc(base, exponent - 1);  
+//        document.writeln(+ base + + exponent + );
+	}
+	</script>
+</body>
+</head>
+</html>
