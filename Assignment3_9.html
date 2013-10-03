@@ -1,0 +1,48 @@
+<!Implement the following functions:
+a. Function celsius returns the Celsius equivalent of a Fahrenheit temperature, using the 
+calculation C = 5.0 / 9.0 * ( F - 32 );
+b. Function fahrenheit returns the Fahrenheit equivalent of a Celsius temperature, using the 
+calculation F = 9.0 / 5.0 * C + 32;
+Use these functions to write a script that enables the user to enter either a Fahrenheit or a Celsius 
+temperature and displays the Celsius or Fahrenheit equivalent. Your XHTML document should contain two 
+buttons—one to initiate the conversion from Fahrenheit to Celsius and one to initiate the conversion from 
+Celsius to Fahrenheit.>
+<html>
+<head>
+<body>
+<FORM NAME="Conversion">
+<H2>Converting between Celsius and Fahrenheit.<br></H2>
+<P>Enter Celsius to convert to Fahrenheit. <INPUT TYPE="TEXT" NAME="Celsius" ID="Celsius">
+<INPUT TYPE="Button" Value="ToFahrenheit" onClick="ConvToFahrenheit()"><BR><BR>
+Enter Fahrenheit to convert to Celsius. <INPUT TYPE="TEXT" NAME="Fahrenheit" ID="Fahrenheit">
+<INPUT TYPE="Button" Value="ToCelsius" onClick="ConvToCelsius()">
+</P>
+</FORM>		
+<canvas id="myCanvas" width="600" height="800" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+	<meta charset = "utf-8">
+	<title>Assignment3_9</title>
+		<script> 
+		var c=document.getElementById('myCanvas');
+		var ctx=c.getContext('2d');
+		ctx.font='15pt Arial';	
+		function ConvToFahrenheit()
+		{
+		var Degree=parseFloat(document.getElementById("Celsius").value);
+		Degree=9.0 / 5.0 * Degree + 32;
+		ctx.clearRect(0,0,c.width,c.height);
+		ctx.fillText('Temperature in Fahrenheit is', 5, 15);	
+        ctx.fillText(Degree, 260, 15);		
+		}
+		function ConvToCelsius()
+		{
+		var Degree=parseFloat(document.getElementById("Fahrenheit").value);
+		Degree=5.0 / 9.0 * ( Degree - 32 );
+		ctx.clearRect(0,0,c.width,c.height);
+		ctx.fillText('Temperature in Celsius is', 5, 15);	
+        ctx.fillText(Degree, 230, 15);			
+		}
+		</script>
+</body>
+		</head>
+</html>
