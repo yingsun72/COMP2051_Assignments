@@ -1,0 +1,63 @@
+<!The greatest common divisor (GCD) of two integers is the largest integer that evenly divides each of the 
+two numbers. Write a function gcd that returns the greatest common divisor of two integers. 
+Incorporate the function into a script that reads two values from the user.>
+<html>
+<head>
+<body>
+<FORM NAME="Conversion">
+<H2>Reverse integer.<br></H2>
+<P>Enter integers to find the greastest common divisor. 
+<INPUT TYPE="TEXT" NAME="Integer1" ID="Integer1">
+<INPUT TYPE="TEXT" NAME="Integer2" ID="Integer2"><BR>
+<INPUT TYPE="Button" Value="Find GCD" onClick="findGCD()"><BR><BR>
+</P>
+</FORM>		
+<canvas id="myCanvas" width="600" height="800" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>	
+	<meta charset = "utf-8">
+	<title>Assignment3_13</title>
+		<script> 
+		var c=document.getElementById('myCanvas');
+		var ctx=c.getContext('2d');
+		ctx.font='15pt Arial';	
+                function findGCD(){
+		var xStr = document.getElementById("Integer1").value;
+		var yStr = document.getElementById("Integer2").value;
+		var x = parseInt(xStr, 10);
+		var y = parseInt(yStr, 10);
+		var output;
+		if (!isInteger(xStr) || !isInteger(yStr))
+		output = "Not an integer";
+		else if (x < 0 || x >= 9007199254740992 || y < 0 || y >= 9007199254740992)
+		output = "Number out of range"
+		else 
+		output = gcd(Math.abs(x), Math.abs(y)).toString(10);
+		ctx.clearRect(0,0,c.width,c.height);
+		ctx.fillText('The greatest common divisor is', 5, 15);	
+        	ctx.fillText(output, 300, 15);	
+		}
+/* 
+ * Returns the GCD of the given integers. Each input must be non-negative.
+ */
+function gcd(x, y) {
+	while (y != 0) {
+		var z = x % y;
+		x = y;
+		y = z;
+	}
+	return x;
+}
+
+
+/* 
+ * Tests whether the given string represents an integer.
+ */
+function isInteger(str) {
+	return /^-?\d+$/.test(str);
+}
+		</script>
+
+
+</body>
+		</head>
+</html>
