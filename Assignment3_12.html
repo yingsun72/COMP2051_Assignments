@@ -1,0 +1,38 @@
+<!Write a function that takes an integer value and returns the number with its digits reversed. For 
+example, given the number 7631, the function should return 1367. Incorporate the function into a script 
+that reads a value from the user. Display the result of the function in the status bar.>
+<html>
+<head>
+<body>
+<FORM NAME="Conversion">
+<H2>Reverse integer.<br></H2>
+<P>Enter integer to be reversed. <INPUT TYPE="TEXT" NAME="Integer" ID="Integer">
+<INPUT TYPE="Button" Value="ToReverse" onClick="ReverseInt()"><BR><BR>
+</P>
+</FORM>		
+<canvas id="myCanvas" width="600" height="800" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>	
+	<meta charset = "utf-8">
+	<title>Assignment3_12</title>
+		<script> 
+		var c=document.getElementById('myCanvas');
+		var ctx=c.getContext('2d');
+		ctx.font='15pt Arial';	
+                function ReverseInt(){
+                var b=0;
+		var Integer=parseInt(document.getElementById("Integer").value);
+		while(Integer > 0){		
+		b = b * 10
+		b = b + parseInt(Integer % 10)
+		Integer = parseInt(Integer / 10)
+		}
+		ctx.clearRect(0,0,c.width,c.height);
+		ctx.fillText('Reversed integer is', 5, 15);	
+        	ctx.fillText(b, 200, 15);	
+		}
+		</script>
+
+
+</body>
+		</head>
+</html>
