@@ -1,0 +1,74 @@
+<!An integer number is said to be a perfect number if its factors, including 1 (but not the number itself), 
+sum to the number. For example, 6 is a perfect number, because 6 = 1 + 2 + 3.Write a function perfect 
+that determines whether parameter number is a perfect number. Use this function in a script that 
+determines and displays all the perfect numbers between 1 and 1000. Print the factors of each perfect 
+number to confirm that the number is indeed perfect. Challenge the computing power of your computer 
+by testing numbers much larger than 1000. Display the results in a textarea. An integer is said to be 
+prime if it is greater than 1 and divisible only by 1 and itself. For example, 2, 3, 5 and 7 are prime, but 4, 
+6, 8 and 9 are not. 
+a. Write a function that determines whether a number is prime.
+b. Use this function in a script that determines and prints all the prime numbers between 1 and 
+10,000. How many of these 10,000 numbers do you really have to test before being sure that 
+you have found all the primes? Display the results in a textarea. 
+c. Initially, you might think that n/2 is the upper limit for which you must test to see whether a 
+number is prime, but you only need go as high as the square root of n. Why? Rewrite the 
+program using the Math.sqrt method to calculate the square root, and run it both ways. 
+Estimate the performance improvement.>
+<html>
+<head>
+<body>
+<INPUT TYPE="Button" Value="Print prime numbers (1-10000)" onClick="PrintPrime()"><BR>
+<INPUT TYPE="Button" Value="Print perfect numbers (1-100)" onClick="PrintPerfect()">
+<textarea id="outputtext" rows="40" cols="200"></textarea>	
+	<meta charset = "utf-8">
+	<title>Assignment3_11</title>
+		<script> 
+		function PrintPrime(){
+                var string="1,", prime;
+                var coma=",";
+                for (var i=1;i<=10000;i++){
+		  prime=CheckPrime(i); 
+		  if (prime==true){                  
+		    string=string+i.toString()+coma;}	
+                }
+  		document.getElementById("outputtext").value = string;	
+		}
+                
+		function CheckPrime(n){
+    		  for (var c=2; c<=n - 1; c++){
+      		    if ( n%c == 0 ){
+        	    return false;
+      		  }
+      	 	  return true;
+   		}		
+                }
+		function PrintPerfect(){
+		var string="1", perfect;
+                var coma=",";
+                for (var i=1;i<=100;i++){
+		perfect=CheckPerfect(i);
+		if (perfect==true){
+                  string=string+i.toString()+coma;
+		}
+		document.getElementById("outputtext").value = string;
+		}
+		} 
+		function CheckPerfect(n){
+                var perfectNo=0;
+                for (var i = 1; i < n; i++) {
+                        if (n % i == 0) {
+                                perfectNo = perfectNo + i;
+                        }
+                }
+                if (perfectNo == n) {
+		  return true;	
+                } else {
+		  return false;
+                }	
+                }
+		</script>
+
+
+</body>
+		</head>
+</html>
