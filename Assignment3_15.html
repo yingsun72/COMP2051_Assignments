@@ -1,0 +1,43 @@
+<!Write a script that simulates coin tossing. Let the program toss the coin each time the user clicks the 
+Toss button. Count the number of times each side of the coin appears. Display the results. The program
+should call a separate function flip that takes no arguments and returns false for tails and true for heads. 
+[Note: If the program realistically simulates the coin tossing, each side of the coin should appear 
+approximately half the time.]>
+<html>
+<head>
+<body>
+<FORM NAME="Conversion">
+<H2>Coin Toss Simulation.<br></H2>
+<INPUT TYPE="Button" Value="Toss Coin" onClick="TossCoin()"><BR><BR>
+</FORM>		
+<canvas id="myCanvas" width="600" height="800" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>	
+	<meta charset = "utf-8">
+	<title>Assignment3_15</title>
+		<script> 
+		var h=0, t=0, output;		
+		var c=document.getElementById('myCanvas');
+		var ctx=c.getContext('2d');
+		ctx.font='15pt Arial';	
+        function TossCoin(){
+		var mynum=Math.floor(Math.random(2)*2);	
+		if(mynum==1){
+		h=h+1;
+		output="Head"}
+		else{
+		t=t+1;
+		output="Tail";}
+		ctx.clearRect(0,0,c.width,c.height);
+		ctx.fillText('The coin landed on', 5, 15);	
+        ctx.fillText(output, 240, 15);	
+		ctx.fillText('Coin landed on heads', 5, 35);	
+        ctx.fillText(h, 240, 35);	
+		ctx.fillText('Coin landed on tail', 5, 55);	
+        ctx.fillText(t, 240, 55);			
+		}
+		</script>
+
+
+</body>
+		</head>
+</html>
