@@ -1,0 +1,46 @@
+<!Write a script that inputs integers (one at a time) and passes them one at a time to function isEven, 
+which uses the modulus operator to determine whether an integer is even. The function should take an 
+integer argument and return true if the integer is even and false otherwise. Use sentinel-controlled 
+looping and a prompt dialog.>
+<html>
+<head>
+<body>
+	<meta charset = "utf-8">
+	<title>Assignment3_6</title>
+		<script> 
+//prompt for user input
+		var userInput = parseInt(prompt("Enter integer to determine whether it's even:",""));
+                while (userInput!=null)
+ 		{
+                  if (userInput!=null)
+		  {
+		  var Even=isEven(userInput);
+		  if (Even=="True")
+		  {	
+		    document.writeln("<h3>This integer is even!</h3>");
+		  }	
+ 		  if (Even=="False")
+		  {
+              	    document.writeln("<h3>This integer is odd!</h3>");
+		  }	
+		userInput = parseInt(prompt("Enter integer to determine whether it's even:",""));  	
+                document.writeln("<h3>userInput is &nbsp" + userInput + "</h3>");
+		  }	 
+		}
+                function isEven(input)
+		{
+		var rem=input%2
+                if (rem==0)
+		{
+                  var Even="True"
+		}
+ 		else
+		{
+		  var Even="False"
+		}
+		return Even; 
+		}
+		</script>
+</body>
+		</head>
+</html>
