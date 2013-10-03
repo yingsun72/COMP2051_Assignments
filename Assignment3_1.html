@@ -1,0 +1,20 @@
+<!Write a script that prompts the user for the radius of a circle, uses a function circleArea to calculate the 
+area of the circle, and prints the area of the circle.>
+<html>
+<head>
+<body>
+	<meta charset = "utf-8">
+	<title>Assignment3_1</title>
+		<script>
+		function circleArea(Rad)
+		{
+        var Area=Math.PI * Math.pow(Rad,2);
+		return Area;
+		}
+		var Radius=prompt("Please enter the radisu of a circle:","");
+		var Area=circleArea(Radius);
+		document.writeln("<h3>The are of the circle is: &nbsp" + Area + "</h3>");
+		</script>
+</body>
+		</head>
+</html>
