@@ -1,0 +1,43 @@
+<!Write a function qualityPoints that inputs a student’s average and returns 4 if the student's average is 
+90–100, 3 if the average is 80–89, 2 if the average is 70–79, 1 if the average is 60–69 and 0 if the average 
+is lower than 60. Incorporate the function into a script that reads a value from the user.>
+<html>
+<head>
+<body>
+<FORM NAME="Conversion">
+<H2>Reverse integer.<br></H2>
+<P>Enter student average to get quality points. 
+<INPUT TYPE="TEXT" NAME="Average" ID="Average"><BR>
+<INPUT TYPE="Button" Value="Get Quality Points" onClick="qualityPoints()"><BR><BR>
+</P>
+</FORM>		
+<canvas id="myCanvas" width="600" height="800" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>	
+	<meta charset = "utf-8">
+	<title>Assignment3_14</title>
+		<script> 
+		var c=document.getElementById('myCanvas');
+		var ctx=c.getContext('2d');
+		ctx.font='15pt Arial';	
+
+                function qualityPoints(){
+                var output=0;
+                var Average=parseFloat(document.getElementById("Average").value);
+                if (Average>=90&&Average<=100)
+		  output=4 
+                if (Average>=80&&Average<=89)
+		  output=3
+                if (Average>=70&&Average<=79)
+		  output=2
+                if (Average>=60&&Average<=69)
+		  output=1   
+		ctx.clearRect(0,0,c.width,c.height);
+		ctx.fillText('The student quality point is', 5, 15);	
+        	ctx.fillText(output, 240, 15);	
+		}
+		</script>
+
+
+</body>
+		</head>
+</html>
