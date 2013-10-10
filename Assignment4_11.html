@@ -1,0 +1,33 @@
+<!Create an array with all elements initialized to 1 (true). Array elements with prime subscripts will 
+remain as 1. All other array elements will eventually be set to zero.>
+<html>
+<head>
+<body>
+	<meta charset = "utf-8">
+	<title>Assignment4_11</title>
+		<script> 
+		var newArray = new Array();
+//initialized to 1		
+		for (var i=0; i<100; i++){
+		  newArray[i]=1;
+		}
+//change value of array elements with prime subscripts		
+		for (i=0; i<100; i++){
+		  if (isPrime(i)==true)
+		  newArray[i]=0;
+		}		
+		alert(newArray);
+//prime number determining function
+		function isPrime(numb){
+		if(numb%2==0) return false;
+		for(var c=3; c<= Math.sqrt(numb); c=c+2){
+		if(numb%c ==0){
+		return false;
+		}
+		}
+		return true;
+		}
+		</script>
+</body>
+		</head>
+</html>
